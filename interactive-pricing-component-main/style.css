@@ -1,0 +1,58 @@
+
+
+
+.card {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-template-rows: repeat(6,auto);
+    gap: 10px 10px;
+}
+
+.container {
+    background: url("./images/bg-pattern.svg") no-repeat;
+
+}
+
+.container > div:nth-child(odd){
+    background: grey;
+}
+
+.header > img {
+    z-index: -1;
+}
+
+.header > p {
+    z-index: 1;
+}
+
+.header {
+
+    grid-column-start: 2;
+    grid-row-start: 1;
+
+}
+.page-views{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+/*.slider{*/
+/*    grid-column-start: 2;*/
+/*    grid-row-start: 3;*/
+/*}*/
+.price{
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+.billing{
+    grid-column-start: 2;
+    grid-row-start: 4;
+}
+.information{
+    grid-column-start: 2;
+    grid-row-start: 5;
+}
+
+.card {
+    background-color: green;
+    border-radius: 10px;
+}
