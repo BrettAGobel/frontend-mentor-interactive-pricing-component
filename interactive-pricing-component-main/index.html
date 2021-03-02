@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="script.js"></script>
   <title>Frontend Mentor | Interactive pricing component</title>
 
 
@@ -22,20 +23,22 @@
   </div>
   <div class="card">
   <div class="page-views">
-  <p>Pageviews</p>
-    <input type="range" id="views" name="views">
+<p id="total-views">HERE is Demo</p>
+    <input type="range" id="views" name="views" min="1000" max="20000" step="100" value="1000" >
   </div>
   <div class="price">
-  $ /month
+    <span>$ /month</span>
   </div>
   <div class="billing">
 
 <span>Monthly Billing</span>
+    <div class="toggle-container">
 <input type="checkbox" id="switch" class="checkbox">
     <label for="switch" class="toggle"></label>
+    </div>
 <!--    <button type="button" aria-pressed="true">TEST</button>-->
 
-    <span>Yearly Billing 25% discount</span>
+    <span>Yearly Billing -25%</span>
   </div>
   <div class="information">
     <ul>
@@ -43,12 +46,12 @@
       <li>100% data ownership</li>
       <li>Email reports</li>
     </ul>
-
+<button type="button" role="button" id="trial" onclick="amIOn()">Start My Trial</button>
 
   </div>
 </div>
 
 </div>
-<link rel="script" href="script.js">
+
 </body>
 </html>
