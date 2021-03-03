@@ -16,28 +16,24 @@
 <!--<img src="images/bg-pattern.svg">-->
 <div class="container">
   <div class="header">
-
     <p>Simple, traffic-based pricing</p>
-        <p class="h-article">Sign-up for our 30-day trial. </p>
+    <p class="h-article">Sign-up for our 30-day trial. </p>
     <p class="h-article">No credit card required.</p>
   </div>
   <div class="card">
   <div class="page-views">
-<p id="total-views">HERE is Demo</p>
+    <div class="price">
+      <span id="new-price">$1/ month</span>
+    </div>
+    <p id="total-views">Page Views: 1000</p>
     <input type="range" id="views" name="views" min="1000" max="20000" step="100" value="1000" >
   </div>
-  <div class="price">
-    <span id="new-price"></span>
-  </div>
   <div class="billing">
-
-<span>Monthly Billing</span>
+    <span>Monthly Billing</span>
     <div class="toggle-container">
-<input type="checkbox" id="switch" class="checkbox">
-    <label for="switch" class="toggle"></label>
+      <input type="checkbox" id="switch" class="checkbox">
+      <label for="switch" class="toggle"></label>
     </div>
-<!--    <button type="button" aria-pressed="true">TEST</button>-->
-
     <span>Yearly Billing -25%</span>
   </div>
   <div class="information">
@@ -47,7 +43,6 @@
       <li>Email reports</li>
     </ul>
 <button type="button" role="button" id="trial" onclick="amIOn()">Start My Trial</button>
-
   </div>
 </div>
 

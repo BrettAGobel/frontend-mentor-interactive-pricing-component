@@ -5,7 +5,9 @@
 //     e.target.setAttribute('aria-pressed', String(!pressed));
 // });
 window.onload = function () {
+
     showResult()
+    pageViews.innerText = "Page Views: " + viewScale.value
 };
 
 // function amIOn() {
@@ -22,16 +24,18 @@ function showResult() {
     pageViews.style.color = 'yellow'
     const viewScale = document.getElementById('views')
 
+    let newViewValue = viewScale.value
+
 //changes pageviews number to whatever the range slider chages to
     function setViewsEventListener () {
-            let newViewValue = viewScale.value
-            viewScale.addEventListener('change', () => {
+
+            viewScale.addEventListener('change', (e) => {
                 // console.log('page views: ', viewScale.value)
                 let price = Math.round((viewScale.value * .0005))
-                if (yBilling.checked === true) {
+                if (yBilling.checked == true) {
                     price = price * 0.75
+                    newPrice.innerText = `$${price}/ month`
                 }
-
                 pageViews.innerText = "Page Views: " + viewScale.value
                 newPrice.innerText = `$${price}/ month`
 
@@ -43,8 +47,10 @@ function showResult() {
 
     // function updatePrice () {
     //
-    //     viewScale.addEventListener('change', () => {
-    //
+    //     yBilling.addEventListener('change', () => {
+    //             if (yBilling.checked === true) {
+    //                 newPrice.innerText =
+    //             }
     //
     //     })
     // }
