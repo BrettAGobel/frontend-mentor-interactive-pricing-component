@@ -1,7 +1,28 @@
+body {
+    font-family: Calibri;
+
+}
+
+
 @media screen and (min-width: 360px) {
     .container {
 
+        background:  url("./images/bg-pattern.svg") no-repeat left top;
+        display: grid;
+        grid-template-columns:  20px auto 20px;
+        grid-template-rows: repeat(2,auto);
+
     }
+
+    .card {
+
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        grid-template-rows: repeat(5,auto);
+        gap: 10px 10px;
+        z-index: 1;
+    }
+
 
 
     .information{
@@ -18,13 +39,25 @@
 
     .page-views{
         display: flex;
-        flex-flow: column;
+        flex-flow: column-reverse;
         justify-content: center;
         align-content: center;
         align-items: center;
         grid-column-start: 2;
         grid-row-start: 1;
     }
+
+    .price{
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+
+
 }
 
 
@@ -33,6 +66,7 @@
 
 @media screen and (min-width: 780px) {
     .container {
+        position: relative;
         display: grid;
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(2,auto);
@@ -40,7 +74,7 @@
 
     }
     .card {
-
+        z-index: +1;
         display: grid;
         grid-template-columns: repeat(3,auto);
         grid-template-rows: repeat(5,auto);
@@ -94,12 +128,22 @@ body {
 /*    gap: 15%;*/
 /*}*/
 
-.container{
-    display: grid;
-    grid-template-columns:  20px auto 20px;
-    grid-template-rows: repeat(2,auto);
+img {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    position: absolute;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 4;
 
-    background:  url("./images/bg-pattern.svg") no-repeat right top;
+    /*display: grid;*/
+    /*grid-template-columns:  20px auto 20px;*/
+    /*grid-template-rows: repeat(2,auto);*/
+
+
 }
 
 .card {
@@ -285,7 +329,7 @@ li {
 
 
 }
-.toggle:after:hover {
+.toggle:hover:after {
     background-color: black;
 }
 
@@ -306,6 +350,7 @@ li {
 }
 
 #trial {
+    position: relative;
     width: 150px;
     height: 4em;
     background-color: black;
@@ -313,6 +358,26 @@ li {
     color: white;
     border-radius: 2em;
 }
+
+#trial:after {
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    left: 1px;
+    content: '';
+    background: blue;
+    width: 10px;
+    height: 4em;
+    opacity: 50%;
+    overflow: hidden;
+    transform: rotate(45deg);
+}
+
+#trial:hover:after {
+    left: 100%;
+    transition: all 1s ;
+}
+
 
 /*input[type="range"] {*/
 
