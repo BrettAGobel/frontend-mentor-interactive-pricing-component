@@ -8,6 +8,7 @@ body {
     .container {
 
         background:  url("./images/bg-pattern.svg") no-repeat left top;
+
         display: grid;
         grid-template-columns:  20px auto 20px;
         grid-template-rows: repeat(2,auto);
@@ -45,6 +46,7 @@ body {
         align-items: center;
         grid-column-start: 2;
         grid-row-start: 1;
+
     }
 
     .price{
@@ -66,9 +68,10 @@ body {
 
 @media screen and (min-width: 780px) {
     .container {
+        background:  url("./images/bg-pattern.svg") no-repeat right top;
         position: relative;
         display: grid;
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(3, auto) ;
         grid-template-rows: repeat(2,auto);
         column-gap: 20%;
 
@@ -76,7 +79,7 @@ body {
     .card {
         z-index: +1;
         display: grid;
-        grid-template-columns: repeat(3,auto);
+        grid-template-columns: 20% 60% 20%;
         grid-template-rows: repeat(5,auto);
         gap: 10px 10px;
     }
@@ -84,9 +87,10 @@ body {
     .page-views{
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-content: center;
         align-items: center;
+        flex: 1;
         grid-column-start: 2;
         grid-row-start: 1;
     }
@@ -349,34 +353,95 @@ li {
     margin: 5px;
 }
 
+@keyframes movingBackground {
+
+    0% {
+        background-position: 1% 0%;
+    }
+
+    50% {
+        background-position: 99% 100%;
+    }
+
+    100% {
+        background-position: 1% 0%;
+    }
+
+}
+
 #trial {
+    overflow: hidden;
+    background-image: linear-gradient(270deg, #FFFFFF, darkgrey);
     position: relative;
     width: 150px;
     height: 4em;
-    background-color: black;
-    box-shadow: white inset 1px 1px;
-    color: white;
+    /*box-shadow: black inset 1px 1px;*/
+    color: black;
     border-radius: 2em;
+    border: solid black;
+
+
 }
 
-#trial:after {
-    display: inline-block;
-    position: absolute;
-    top: 0px;
-    left: 1px;
+#trial::before {
     content: '';
-    background: blue;
-    width: 10px;
-    height: 4em;
-    opacity: 50%;
-    overflow: hidden;
-    transform: rotate(45deg);
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 60px;
+    height: 100%;
+    top: 0;
+    filter: blur(30px);
+    transform: translateX(-100px) skewX(-15deg);
 }
 
-#trial:hover:after {
-    left: 100%;
-    transition: all 1s ;
+#trial::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    width: 30px;
+    height: 100%;
+    top: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
 }
+
+/*#trial:hover {*/
+
+
+/*    cursor: pointer;*/
+/*}*/
+
+#trial:hover::before, #trial:hover::after {
+    transform: translateX(300px) skewX(-15deg);
+    transition: 0.7s;
+}
+
+/*#trial:after {*/
+/*    display: inline-block;*/
+/*    position: absolute;*/
+/*    top: 18px;*/
+/*    left: 30px;*/
+/*    content: '';*/
+/*    background: white;*/
+/*    width: 90px;*/
+/*    height: 1em;*/
+
+/*    box-shadow: white 1px 1px 10px inset;*/
+
+/*    opacity: 0%;*/
+/*    overflow: hidden;*/
+/*    !*transform: rotate(45deg);*!*/
+/*}*/
+
+/*#trial:hover:after {*/
+/*    overflow: hidden;*/
+/*    width: 0;*/
+/*    opacity: 70%;*/
+/*    left: 80%;*/
+/*    transition: all 1s ;*/
+/*}*/
 
 
 /*input[type="range"] {*/
