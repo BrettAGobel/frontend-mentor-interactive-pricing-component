@@ -3,14 +3,19 @@ body {
 
 }
 
+.container {
+    background:  url("./images/bg-pattern.svg") no-repeat ;
+}
 
 @media screen and (min-width: 360px) and (max-width: 760px) {
     .container {
+    display: flex;
+        flex-direction: column;
 
-        background:  url("./images/bg-pattern.svg") no-repeat left top;
-        display: grid;
-        grid-template-columns:  20px auto 20px;
-        grid-template-rows: repeat(2,auto);
+        width: 100%;
+        /*display: grid;*/
+        /*grid-template-columns:  20px auto 20px;*/
+        /*grid-template-rows: repeat(2,auto);*/
 
     }
 
@@ -61,18 +66,22 @@ body {
 
 }
 
-
+@media (min-width: 1300px) {
+    .container {
+        background-size: contain;
+    }
+}
 
 
 
 @media screen and (min-width: 780px) {
     .container {
         background:  url("./images/bg-pattern.svg") no-repeat right top;
-        position: relative;
+        /*position: relative;*/
         display: grid;
         grid-template-columns: repeat(3, auto) ;
         grid-template-rows: repeat(2,auto);
-        column-gap: 20%;
+        /*column-gap: 20%;*/
 
     }
     .card {
@@ -99,12 +108,8 @@ body {
     }
 
     .billing{
-        /*font-size: 1em;*/
-        /*display: flex;*/
-        /*flex-flow: row;*/
-        /*justify-content: center;*/
-        /*align-content: center;*/
-        /*align-items: center;*/
+        grid-column-start: 1;
+        grid-column-end: 3;
         grid-row-start: 3;
 
     }
@@ -193,15 +198,17 @@ p:nth-child(1) {
     color: grey;
 }
 
-.price{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    grid-column-start: 1;
-    grid-row-start: 3;
-}
+/*.price{*/
+/*    display: flex;*/
+/*    flex-flow: column;*/
+/*    justify-content: center;*/
+/*    align-content: center;*/
+/*    align-items: center;*/
+/*    grid-column-start: 1;*/
+/*    grid-row-start: 3;*/
+/*}*/
+
+
 .billing{
     font-size: 1em;
     display: flex;
@@ -360,39 +367,41 @@ li {
 /*}*/
 
 /*firefox slider*/
-input[type="range"] {
-    /* fix for FF unable to apply focus style bug  */
+#views {
 
-    width: 100%;
-    background: transparent;
+
+    --track-Background: #FFFFFF;
+    background: white;
     border: transparent;
     margin: 20px;
+    border-radius: 6px;
+    height: 8px;
 
 
 }
 
 
-input[type="range"]:-moz-focusring {
-    outline: 1px solid white;
-    outline-offset: -1px;
-}
+/*#views:-moz-focusring {*/
+/*    outline: 1px solid white;*/
+/*    outline-offset: -1px;*/
+/*}*/
 
 
 
 
-input[type="range"]::-moz-range-track {
+/*#views::-moz-range-track {*/
 
-    height: 10px;
-    background: whitesmoke;
+/*    height: 10px;*/
+/*    background-color: var(--track-Background);*/
 
-    border-radius: 3px;
-}
-
-
+/*    border-radius: 3px;*/
+/*}*/
 
 
 
-input[type="range"]::-moz-range-thumb {
+
+
+#views::-moz-range-thumb {
 
     width: 40px;
     height: 40px;
